@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.StoreChallenge" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/blue_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="editTextStyle">@style/Widget.StoreChallenge.EditText</item>
+        <item name="checkboxStyle">@style/Widget.StoreChallenge.CheckBox</item>
+    </style>
+
+    <style name="Widget.StoreChallenge.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+<!--        <item name="android:button">@drawable/bg_check_box</item>-->
+        <item name="android:buttonTint">?colorPrimary</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
+    </style>
+
+    <style name="Widget.StoreChallenge.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_text_input</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body1</item>
+        <item name="android:padding">@dimen/component_margin_medium</item>
+        <item name="android:drawablePadding">@dimen/component_margin</item>
+    </style>
+
+    <style name="Widget.StoreChallenge.MenuButton" parent="Widget.AppCompat.TextView">
+        <item name="android:drawablePadding">@dimen/component_margin</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
+        <item name="android:width">100dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MenuBackground">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="Background">
+        <item name="android:background">@color/blue_100</item>
+    </style>
+
+    <style name="TextAppearance.StoreChallenge.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+    <style name="TextAppearance.StoreChallenge.Headline5" parent="TextAppearance.MaterialComponents.Headline5"/>
+    <style name="TextAppearance.StoreChallenge.Headline6" parent="TextAppearance.MaterialComponents.Headline6"/>
+    <style name="TextAppearance.StoreChallenge.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2"/>
+    <style name="TextAppearance.StoreChallenge.Body1" parent="TextAppearance.MaterialComponents.Body1"/>
+    <style name="TextAppearance.StoreChallenge.Body2" parent="TextAppearance.MaterialComponents.Body2"/>
+</resources>

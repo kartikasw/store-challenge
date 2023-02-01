@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">store-challenge</string>
+
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_main_menu">Main Menu</string>
+    <string name="menu_menu">Menu</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_target">Target Install CDFDPC</string>
+    <string name="menu_transmission_history">Transmission History</string>
+    <string name="menu_visit">Kunjungan</string>
+
+
+    <string name="btn_login">Login</string>
+
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+
+    <string name="error_field_empty">Data harus diisi</string>
+
+    <string name="state_loading">Mohon tunggu…</string>
+
+    <string name="title_visit">Kunjungan pada bulan &lt;b>%1$s&lt;/b></string>
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="layout_padding_horizontal_small">16dp</dimen>
+    <dimen name="layout_padding_horizontal_medium">32dp</dimen>
+    <dimen name="layout_padding_horizontal_large">64dp</dimen>
+
+    <dimen name="image_profile">100dp</dimen>
+
+    <dimen name="component_margin_small">5dp</dimen>
+    <dimen name="component_margin">8dp</dimen>
+    <dimen name="component_margin_medium">12dp</dimen>
+    <dimen name="component_margin_large">20dp</dimen>
+
+    <dimen name="check_box_radius">5dp</dimen>
+
+    <dimen name="menu_icon_size">35dp</dimen>
+    <dimen name="menu_size">110dp</dimen>
+
+    <dimen name="store_card_radius">12dp</dimen>
+
+    <dimen name="text_input_height">48dp</dimen>
+    <dimen name="text_input_radius">8dp</dimen>
+
+    <dimen name="button_radius">12dp</dimen>
+</resources>
