@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     style="@style/Background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.main_menu.MainMenuFragment">
+    tools:context=".presentation.fragment.main_menu.MainMenuFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/mm_guideline_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.05"
+        app:layout_constraintGuide_percent="0.075"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -25,7 +25,7 @@
         android:id="@+id/mm_guideline_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.225"
         android:orientation="horizontal"/>
 
     <ImageView
@@ -33,15 +33,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/mm_guideline_2"
-        android:src="@drawable/bg_profile"/>
+        android:src="@drawable/bg_profile"
+        app:layout_constraintBottom_toTopOf="@+id/mm_guideline_2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/mm_layout_user_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/component_margin_medium"
+        android:paddingVertical="@dimen/component_margin"
         android:paddingHorizontal="@dimen/layout_padding_horizontal_small"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -51,13 +51,15 @@
             android:id="@+id/mm_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Mita Khairunnisa"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Headline5"/>
 
         <TextView
             android:id="@+id/mm_tv_role"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/component_margin_medium"
+            android:layout_marginTop="@dimen/component_margin_small"
+            android:text="Role: {...}"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"/>
 
         <TextView
@@ -65,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/component_margin_medium"
+            android:text="NIK: 123456789"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"/>
     </LinearLayout>
 
@@ -88,13 +91,6 @@
         android:layout_margin="@dimen/layout_padding_horizontal_small"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/mm_guideline_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.7"
-        android:orientation="horizontal"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -134,7 +130,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                       android:drawableStart="@drawable/ic_warning"
+                       app:drawableStartCompat="@drawable/ic_warning"
                        android:text="150"
                        android:gravity="center_vertical"
                        android:drawablePadding="@dimen/component_margin_small"/>
@@ -159,7 +155,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                       android:drawableStart="@drawable/ic_check_circle"
+                       app:drawableStartCompat="@drawable/ic_check_circle"
                        android:text="150"
                        android:gravity="center_vertical"
                        android:drawablePadding="@dimen/component_margin_small"/>
@@ -184,7 +180,7 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                       android:drawableStart="@drawable/ic_check_circle"
+                       app:drawableStartCompat="@drawable/ic_check_circle"
                        android:text="150"
                        android:gravity="center_vertical"
                        android:drawablePadding="@dimen/component_margin_small"/>
@@ -208,12 +204,11 @@
     <LinearLayout
         android:id="@+id/mm_layout_menu"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         style="@style/MenuBackground"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/layout_padding_horizontal_small"
         android:paddingVertical="@dimen/component_margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/mm_guideline_4"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
@@ -253,7 +248,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.StoreChallenge.MenuButton"
                 android:text="@string/menu_dashboard"
-                app:drawableTopCompat="@drawable/ic_check_circle" />
+                app:drawableTopCompat="@drawable/ic_dashboard" />
 
             <TextView
                 android:id="@+id/mm_btn_history"
@@ -261,11 +256,12 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.StoreChallenge.MenuButton"
                 android:text="@string/menu_transmission_history"
-                app:drawableTopCompat="@drawable/ic_check_circle" />
+                app:drawableTopCompat="@drawable/ic_transmission" />
 
         </com.google.android.flexbox.FlexboxLayout>
 
         <TextView
+            android:id="@+id/mm_btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.StoreChallenge.MenuButton"

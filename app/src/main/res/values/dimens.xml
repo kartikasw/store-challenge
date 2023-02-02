@@ -20,5 +20,9 @@
     <dimen name="text_input_height">48dp</dimen>
     <dimen name="text_input_radius">8dp</dimen>
 
+    <dimen name="circle_button_icon_size">35dp</dimen>
+    <dimen name="circle_button_size">?actionBarSize</dimen>
     <dimen name="button_radius">12dp</dimen>
+
+    <dimen name="search_radius">5dp</dimen>
 </resources>

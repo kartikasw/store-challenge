@@ -3,6 +3,7 @@ package com.ayodev.store_challenge.core.di
 import android.content.Context
 import androidx.room.Room
 import com.ayodev.store_challenge.core.data.source.local.room.StoreDatabase
+import com.ayodev.store_challenge.core.data.source.local.room.dao.StoreDao
 import com.ayodev.store_challenge.core.util.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
@@ -19,7 +20,10 @@ object DatabaseModule {
     fun provideDatabase(@ApplicationContext context: Context): StoreDatabase =
         Room.databaseBuilder(
             context,
-            StoreDatabase::class.java,
-            DATABASE_NAME
+            StoreDatabase::class.java, DATABASE_NAME
         ).fallbackToDestructiveMigration().build()
+
+    @Provides
+    fun provideStoreDao(database: StoreDatabase): StoreDao =
+        database.storeDao()
 }

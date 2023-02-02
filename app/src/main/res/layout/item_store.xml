@@ -5,6 +5,7 @@
     android:layout_marginHorizontal="@dimen/layout_padding_horizontal_small"
     android:layout_marginVertical="@dimen/component_margin"
     app:cardCornerRadius="@dimen/store_card_radius"
+    style="@style/ItemStoreCard"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout

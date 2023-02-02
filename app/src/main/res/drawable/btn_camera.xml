@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#00CC99"
+                android:endColor="?colorPrimary"/>
+            <size android:width="@dimen/circle_button_size"
+                android:height="@dimen/circle_button_size"/>
+            <stroke android:width="2dp" android:color="@color/white"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_camera"
+        android:gravity="center" />
+</layer-list>

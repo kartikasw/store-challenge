@@ -2,6 +2,7 @@
     <string name="app_name">store-challenge</string>
 
     <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_store_list">List Store</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_main_menu">Main Menu</string>
     <string name="menu_menu">Menu</string>
@@ -10,15 +11,24 @@
     <string name="menu_transmission_history">Transmission History</string>
     <string name="menu_visit">Kunjungan</string>
 
-
+    <string name="btn_cancel">Batal</string>
     <string name="btn_login">Login</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_not_visit">Not Visit</string>
+    <string name="btn_visit">Visit</string>
 
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
 
+    <string name="confirm_logout">Apakah Anda yakin ingin keluar dari aplikasi?</string>
+
     <string name="error_field_empty">Data harus diisi</string>
 
     <string name="state_loading">Mohon tunggu…</string>
+    <string name="state_visited">Visited</string>
 
     <string name="title_visit">Kunjungan pada bulan &lt;b>%1$s&lt;/b></string>
+    <string name="title_visit_list">List kunjungan %1$s</string>
+
+    <string name="last_visit">Last Visit\n<b>%1$s</b></string>
 </resources>

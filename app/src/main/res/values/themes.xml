@@ -37,6 +37,14 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="ItemStoreCard">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="MapsBackground">
+        <item name="android:background">@color/gray_light</item>
+    </style>
+
     <style name="MenuBackground">
         <item name="android:background">@color/white</item>
     </style>

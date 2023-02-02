@@ -2,7 +2,7 @@ package com.ayodev.store_challenge.core.data.source.remote.response
 
 data class StoreResponse(
     val store_id: Int = 0,
-    val store_code: Int = 0,
+    val store_code: String = "",
     val store_name: String = "",
     val address: String = "",
     val dc_id: Int = 0,

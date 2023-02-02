@@ -1,4 +1,4 @@
-package com.ayodev.store_challenge.presentation.login
+package com.ayodev.store_challenge.presentation.fragment.login
 
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import com.ayodev.store_challenge.R
 import com.ayodev.store_challenge.core.domain.Resource
-import com.ayodev.store_challenge.core.domain.model.LoginInfo
 import com.ayodev.store_challenge.databinding.FragmentLoginBinding
 import com.ayodev.store_challenge.util.custom_view.AppLoadingDialog
 import com.ayodev.store_challenge.util.toastLong
@@ -39,10 +41,12 @@ class LoginFragment : Fragment() {
 
         loading = AppLoadingDialog(requireContext())
 
-        binding.lBtnLogin.setOnClickListener{ login() }
+        binding.lBtnLogin.setOnClickListener{
+            it.login()
+        }
     }
 
-    private fun login() {
+    private fun View.login() {
         val username = binding.lEtUsername
         val usernameData = username.text.toString()
         val password = binding.lEtPassword
@@ -52,12 +56,13 @@ class LoginFragment : Fragment() {
             && usernameData.isNotEmpty() && passwordData.isNotEmpty()) {
 
             lifecycleScope.launch {
-                viewModel.login(
-                    LoginInfo(usernameData, passwordData)
-                ).observe(viewLifecycleOwner) {
+                viewModel.login(usernameData, passwordData).observe(viewLifecycleOwner) {
                     when(it) {
                         is Resource.Success -> {
-                            requireContext().toastLong("sukses")
+                            loading.dismiss()
+                            requireContext().toastLong("Login berhasil")
+                            Log.d(TAG, "login berhasil")
+                            this@login.findNavController().navigate(R.id.action_loginFragment_to_mainMenuFragment)
                         }
                         is Resource.Loading -> {
                             loading.show()
@@ -66,6 +71,7 @@ class LoginFragment : Fragment() {
                             loading.dismiss()
                             Log.e(TAG, it.message.toString())
                             requireContext().toastLong(it.message.toString())
+                            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_mainMenuFragment)
                         }
                     }
                 }

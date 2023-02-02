@@ -2,8 +2,10 @@ package com.ayodev.store_challenge.core.di
 
 import com.ayodev.store_challenge.core.data.repository.AuthRepositoryImpl
 import com.ayodev.store_challenge.core.data.repository.StoreRepositoryImpl
+import com.ayodev.store_challenge.core.data.repository.UserRepositoryImpl
 import com.ayodev.store_challenge.core.domain.repository.AuthRepository
 import com.ayodev.store_challenge.core.domain.repository.StoreRepository
+import com.ayodev.store_challenge.core.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,4 +22,8 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun provideStoreRepository(storeRepositoryImpl: StoreRepositoryImpl): StoreRepository
+
+    @Binds
+    @Singleton
+    abstract fun provideUserRepository(userRepositoryImpl: UserRepositoryImpl): UserRepository
 }
