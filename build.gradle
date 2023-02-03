@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.glide_version = "4.13.2"
+    ext.glide_version = "4.14.2"
     ext.lifecycle_version = "2.5.1"
     ext.coroutine_version = "1.6.4"
     ext.room_version = "2.5.0"

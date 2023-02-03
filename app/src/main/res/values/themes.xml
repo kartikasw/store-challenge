@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/black</item>
         <item name="editTextStyle">@style/Widget.StoreChallenge.EditText</item>
         <item name="checkboxStyle">@style/Widget.StoreChallenge.CheckBox</item>
     </style>
@@ -23,13 +24,7 @@
         <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
     </style>
 
-    <style name="Widget.StoreChallenge.EditText" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/bg_text_input</item>
-        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body1</item>
-        <item name="android:padding">@dimen/component_margin_medium</item>
-        <item name="android:drawablePadding">@dimen/component_margin</item>
-    </style>
-
+    <!-- Button -->
     <style name="Widget.StoreChallenge.MenuButton" parent="Widget.AppCompat.TextView">
         <item name="android:drawablePadding">@dimen/component_margin</item>
         <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
@@ -37,6 +32,13 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Widget.StoreChallenge.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">?colorPrimary</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Button</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <!-- Background -->
     <style name="ItemStoreCard">
         <item name="android:background">@color/white</item>
     </style>
@@ -53,6 +55,14 @@
         <item name="android:background">@color/blue_100</item>
     </style>
 
+    <!-- Text Appearance -->
+    <style name="Widget.StoreChallenge.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_text_input</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body1</item>
+        <item name="android:padding">@dimen/component_margin_medium</item>
+        <item name="android:drawablePadding">@dimen/component_margin</item>
+    </style>
+
     <style name="TextAppearance.StoreChallenge.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
         <item name="android:textColor">?colorPrimary</item>
     </style>
@@ -61,4 +71,5 @@
     <style name="TextAppearance.StoreChallenge.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2"/>
     <style name="TextAppearance.StoreChallenge.Body1" parent="TextAppearance.MaterialComponents.Body1"/>
     <style name="TextAppearance.StoreChallenge.Body2" parent="TextAppearance.MaterialComponents.Body2"/>
+    <style name="TextAppearance.StoreChallenge.Button" parent="TextAppearance.MaterialComponents.Button"/>
 </resources>

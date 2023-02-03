@@ -1,4 +1,4 @@
-package com.ayodev.store_challenge.presentation.fragment.maps
+package com.ayodev.store_challenge.presentation.activity.maps
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -66,6 +66,10 @@ class StoreAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         @SuppressLint("SetTextI18n")
         fun bind(store: Store) {
+            with(binding) {
+                isTvName.text = store.store_name
+                isTvDistance.text = "${String.format("% .1f", store.distance)} km"
+            }
         }
     }
 
@@ -81,6 +85,11 @@ class StoreAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         @SuppressLint("SetTextI18n")
         fun bind(store: Store) {
+            with(binding) {
+                isvTvName.text = store.store_name
+                isvTvDistance.text = "${String.format("% .1f", store.distance)} km"
+
+            }
         }
     }
 
@@ -91,7 +100,7 @@ class StoreAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             false -> NOT_VISITED
             true -> {
                 val visit = itemList[position].visit_date
-                val visitDate = dateFormat.format(visit?.time)
+                val visitDate = dateFormat.format(visit.time)
 
                 val time = Calendar.getInstance().time
                 val date = dateFormat.format(time)

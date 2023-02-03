@@ -26,7 +26,6 @@ import com.ayodev.store_challenge.core.util.Constants.SUBCHANNEL_NAME_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.VISIT_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.VISIT_DATE_COLUMN
 import java.util.*
-import javax.annotation.Nullable
 
 @Entity(tableName = STORE_TABLE)
 data class StoreEntity(
@@ -93,4 +92,7 @@ data class StoreEntity(
 
     @ColumnInfo(name = VISIT_DATE_COLUMN)
     var visit_date: Date = Date()
+
+//    @ColumnInfo(name = IMAGE_COLUMN)
+//    var image: Bitmap? = null
 )

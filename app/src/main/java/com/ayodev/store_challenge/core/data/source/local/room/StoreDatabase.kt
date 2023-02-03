@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.ayodev.store_challenge.core.data.source.local.room.converter.DateConverter
+import com.ayodev.store_challenge.core.data.source.local.room.converter.ImageConverter
 import com.ayodev.store_challenge.core.data.source.local.room.dao.StoreDao
 import com.ayodev.store_challenge.core.data.source.local.room.entity.StoreEntity
 

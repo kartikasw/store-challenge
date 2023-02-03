@@ -1,5 +1,7 @@
 package com.ayodev.store_challenge.core.util
 
+import android.graphics.BitmapFactory
+
 object Constants {
     const val BASE_URL = "http://dev.pitjarus.co/api/sariroti_md/index.php/"
     const val DATABASE_NAME = "store.db"
@@ -30,4 +32,5 @@ object Constants {
     const val LONGITUDE_COLUMN = "longitude"
     const val VISIT_COLUMN = "visit"
     const val VISIT_DATE_COLUMN = "visit_date"
+    const val IMAGE_COLUMN = "image"
 }

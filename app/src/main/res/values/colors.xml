@@ -12,8 +12,13 @@
 
     <color name="orange">#F88F07</color>
     <color name="red">#FF6B6B</color>
+    <color name="red_dark">#CF1F1F</color>
     <color name="yellow">#FF9916</color>
     <color name="green">#51CF66</color>
     <color name="gray_light">#FBFBFB</color>
     <color name="gray">#C2C2C2</color>
+
+    <color name="shimmer">#DDDDDD</color>
+
+    <color name="detail_store_card">#FFFFFFFF</color>
 </resources>

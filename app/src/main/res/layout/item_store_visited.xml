@@ -25,6 +25,7 @@
             android:id="@+id/isv_tv_cluster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Cluster : Small"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
             app:layout_constraintTop_toBottomOf="@id/isv_tv_name"
             app:layout_constraintBottom_toTopOf="@id/isv_tv_area"
@@ -34,6 +35,7 @@
         <TextView
             android:id="@+id/isv_tv_area"
             android:layout_width="wrap_content"
+            android:text="TT Regular - IRTM Big Store"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -58,6 +60,7 @@
             android:id="@+id/isv_tv_distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

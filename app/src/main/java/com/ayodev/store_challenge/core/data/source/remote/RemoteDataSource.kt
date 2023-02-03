@@ -3,6 +3,7 @@ package com.ayodev.store_challenge.core.data.source.remote
 import com.ayodev.store_challenge.core.data.Response
 import com.ayodev.store_challenge.core.data.source.remote.response.LoginResponse
 import com.ayodev.store_challenge.core.data.source.remote.service.ApiService
+import com.ayodev.store_challenge.core.data.source.remote.service.LocationApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -13,7 +14,8 @@ import javax.inject.Singleton
 
 @Singleton
 class RemoteDataSource @Inject constructor(
-    private val api: ApiService
+    private val api: ApiService,
+    private val location: LocationApi,
 ) {
     suspend fun login(username: String, password: String): Flow<Response<LoginResponse>> =
         flow {
@@ -26,4 +28,6 @@ class RemoteDataSource @Inject constructor(
         }.catch {
             emit(Response.Error(it.message.toString()))
         }.flowOn(Dispatchers.IO)
+
+    suspend fun getCurrentLocation() = location.getCurrentLocation()
 }

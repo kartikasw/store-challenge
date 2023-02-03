@@ -1,16 +1,18 @@
 package com.ayodev.store_challenge.presentation.fragment.main_menu
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.ayodev.store_challenge.R
 import com.ayodev.store_challenge.databinding.FragmentMainMenuBinding
+import com.ayodev.store_challenge.presentation.activity.maps.MapsActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,7 +36,7 @@ class MainMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.mmBtnVisit.setOnClickListener {
-            it.findNavController().navigate(R.id.action_mainMenuFragment_to_mapsFragment)
+            startActivity(Intent(requireActivity(), MapsActivity::class.java))
         }
 
         binding.mmBtnLogout.setOnClickListener {
