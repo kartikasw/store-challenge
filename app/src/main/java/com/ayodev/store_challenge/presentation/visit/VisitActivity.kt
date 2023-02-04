@@ -26,6 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
+import java.util.Date
 
 @AndroidEntryPoint
 class VisitActivity : AppCompatActivity() {
@@ -102,7 +103,7 @@ class VisitActivity : AppCompatActivity() {
                     showLoading(true)
                     viewModel.updateStoreWhenVisit(store.id, true, time, bitmap)
                     showLoading(false)
-                    setVisitText(true)
+                    setVisitText(time)
                     val intent = Intent(this, DetailStoreActivity::class.java)
                     intent.putExtra("store_id", store.id)
                     startActivity(intent)
@@ -180,15 +181,15 @@ class VisitActivity : AppCompatActivity() {
                 vIvImage.setImageBitmap(store.image)
             }
 
-            setVisitText(store.visit)
+            setVisitText(store.visit_date)
         }
     }
 
-    private fun setVisitText(status: Boolean) {
-        val text = if (status) {
-            resources.getString(R.string.last_visit, dateFormat.format(store.visit_date))
-        } else {
+    private fun setVisitText(date: Date?) {
+        val text = if (date == null) {
             resources.getString(R.string.state_not_visit_yet)
+        } else {
+            resources.getString(R.string.last_visit, dateFormat.format(date) )
         }
         val styledText = text.styledText()
         binding.vTvVisit.text = styledText
@@ -212,7 +213,7 @@ class VisitActivity : AppCompatActivity() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         intent.resolveActivity(packageManager)
 
-        createCustomTempFile(application).also {
+        createCustomTempFile("${store.id}${store.id}${store.id}${store.id}${store.id}", application).also {
             val photoURI: Uri = FileProvider.getUriForFile(
                 this@VisitActivity,
                 "com.ayodev.store_challenge.presentation.activity.visit",

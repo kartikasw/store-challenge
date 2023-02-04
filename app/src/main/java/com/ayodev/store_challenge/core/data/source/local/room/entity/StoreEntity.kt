@@ -93,8 +93,9 @@ data class StoreEntity(
     @ColumnInfo(name = VISIT_COLUMN)
     var visit: Boolean = false,
 
+    @Nullable
     @ColumnInfo(name = VISIT_DATE_COLUMN)
-    var visit_date: Date = Date(),
+    var visit_date: Date?,
 
     @Nullable
     @ColumnInfo(name = IMAGE_COLUMN)

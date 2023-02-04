@@ -100,7 +100,7 @@ class StoreAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             false -> NOT_VISITED
             true -> {
                 val visit = itemList[position].visit_date
-                val visitDate = dateFormat.format(visit.time)
+                val visitDate = dateFormat.format(visit?.time)
 
                 val time = Calendar.getInstance().time
                 val date = dateFormat.format(time)

@@ -2,18 +2,13 @@ package com.ayodev.store_challenge.presentation.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import com.ayodev.store_challenge.R
 import com.ayodev.store_challenge.presentation.login.LoginActivity
 import com.ayodev.store_challenge.presentation.main_menu.MainMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 
 @AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")

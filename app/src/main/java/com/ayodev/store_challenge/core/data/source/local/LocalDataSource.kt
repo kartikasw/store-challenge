@@ -34,6 +34,12 @@ class LocalDataSource @Inject constructor(
         store.updateStoreVisit(id, visit)
     }
 
+    fun setUsername(string: String) =
+        pref.setUsername(string)
+
+    fun getUsername() =
+        pref.getUsername()
+
     fun setLoginStatus(status: Boolean) =
         pref.setLoginStatus(status)
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">store-challenge</string>
+    <string name="app_name">Store Challenge</string>
 
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_store_list">List Store</string>
@@ -45,7 +45,7 @@
     <string name="state_not_visit_yet">&lt;b>Belum mengunjungi toko&lt;b></string>
     <string name="state_visited">Visited</string>
 
-    <string name="title_visit">Kunjungan pada bulan &lt;b>%1$s&lt;/b>></string>
+    <string name="title_visit">Kunjungan pada bulan %1$s</string>
     <string name="title_visit_list">List kunjungan %1$s</string>
 
     <string name="last_visit">Last Visit &lt;b>%1$s&lt;/b></string>

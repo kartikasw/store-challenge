@@ -19,7 +19,10 @@ class AuthRepositoryImpl @Inject constructor(
     private val local: LocalDataSource,
     private val remote: RemoteDataSource
 ): AuthRepository {
-    override suspend fun login(username: String, password: String): Flow<Resource<Login>> =
+    override fun getUsername(): String? =
+        local.getUsername()
+
+    override suspend fun login(save: Boolean, username: String, password: String): Flow<Resource<Login>> =
         flow {
             emit(Resource.Loading())
             when(val response = remote.login(username, password).first()) {
@@ -28,6 +31,7 @@ class AuthRepositoryImpl @Inject constructor(
                         local.insertAllStore(response.data.stores.toListEntity())
                     }
                     local.setLoginStatus(true)
+                    if(save) { local.setUsername(username) }
                     emit(Resource.Success(response.data.toModel()))
                 }
                 is Response.Error -> {

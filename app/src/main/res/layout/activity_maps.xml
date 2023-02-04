@@ -18,11 +18,9 @@
         android:id="@+id/m_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
         android:background="@drawable/bg_search"
-        android:inputType="text"
-        android:focusable="true"
-        android:imeOptions="actionSearch"
-        android:layout_margin="@dimen/component_margin_small"
+        android:layout_marginHorizontal="@dimen/component_margin_small"
         android:queryHint="@string/hint_search"
         app:layout_constraintTop_toBottomOf="@id/m_toolbar"/>
 
@@ -33,12 +31,12 @@
         app:layout_constraintGuide_percent=".5"
         android:orientation="horizontal"/>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/m_maps"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_marginTop="@dimen/component_margin_small"
+        android:layout_marginTop="@dimen/component_margin"
         app:layout_constraintTop_toBottomOf="@id/m_search"
         app:layout_constraintBottom_toTopOf="@id/m_guideline"/>
 

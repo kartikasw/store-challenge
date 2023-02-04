@@ -8,8 +8,10 @@ object Constants {
     const val PREFERENCE_NAME = "store_preference"
 
     const val STORE_TABLE = "store"
+    const val STORE_IMAGE_TABLE = "store_image"
 
     const val LOGIN_STATUS = "login_status"
+    const val USERNAME = "username"
 
     const val ID_COLUMN = "id"
     const val STORE_ID_COLUMN = "store_id"

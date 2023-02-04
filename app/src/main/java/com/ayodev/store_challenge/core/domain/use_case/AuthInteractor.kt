@@ -7,8 +7,11 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class AuthInteractor @Inject constructor(private val authRepository: AuthRepository): AuthUseCase {
-    override suspend fun login(username: String, password: String): Flow<Resource<Login>> =
-        authRepository.login(username, password)
+    override fun getUsername(): String? =
+        authRepository.getUsername()
+
+    override suspend fun login(save: Boolean, username: String, password: String): Flow<Resource<Login>> =
+        authRepository.login(save, username, password)
 
     override fun logout() = authRepository.logout()
 }

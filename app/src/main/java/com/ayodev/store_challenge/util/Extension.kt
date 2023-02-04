@@ -39,11 +39,9 @@ val dateFormat = SimpleDateFormat("dd-MM-yyyy")
 @SuppressLint("SimpleDateFormat")
 val monthAndYearFormat = SimpleDateFormat("MMMM yyyy")
 
-val timeStamp: String = dateFormat.format(System.currentTimeMillis())
-
 fun getCurrentTime(): Date = Calendar.getInstance().time
 
-fun createCustomTempFile(context: Context): File {
+fun createCustomTempFile(string: String, context: Context): File {
     val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
+    return File.createTempFile(string, ".jpg", storageDir)
 }

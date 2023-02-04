@@ -8,6 +8,8 @@ import com.ayodev.store_challenge.R
 import com.ayodev.store_challenge.databinding.ActivityMainMenuBinding
 import com.ayodev.store_challenge.presentation.login.LoginActivity
 import com.ayodev.store_challenge.presentation.maps.MapsActivity
+import com.ayodev.store_challenge.util.getCurrentTime
+import com.ayodev.store_challenge.util.monthAndYearFormat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,6 +24,10 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.mmDate.text = resources.getString(R.string.title_visit, monthAndYearFormat.format(
+            getCurrentTime()
+        ))
 
         binding.mmBtnVisit.setOnClickListener {
             startActivity(Intent(this, MapsActivity::class.java))

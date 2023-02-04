@@ -8,6 +8,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(private val authUseCase: AuthUseCase): ViewModel() {
-    suspend fun login(username: String, password: String) =
-        authUseCase.login(username, password).asLiveData()
+    fun getUsername(): String? =
+        authUseCase.getUsername()
+
+    suspend fun login(save: Boolean, username: String, password: String) =
+        authUseCase.login(save, username, password).asLiveData()
 }

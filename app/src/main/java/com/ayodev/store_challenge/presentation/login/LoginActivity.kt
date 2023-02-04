@@ -30,6 +30,13 @@ class LoginActivity : AppCompatActivity() {
 
         loading = AppLoadingDialog(this)
 
+        viewModel.getUsername()?.let {
+            binding.lEtUsername.apply {
+                setText(it)
+                error = null
+            }
+        }
+
         binding.lBtnLogin.setOnClickListener{
             it.login()
         }
@@ -40,12 +47,13 @@ class LoginActivity : AppCompatActivity() {
         val usernameData = username.text.toString()
         val password = binding.lEtPassword
         val passwordData = password.text.toString()
+        val check = binding.lCbKeepUsername.isChecked
 
         if(username.error == null && password.error == null
             && usernameData.isNotEmpty() && passwordData.isNotEmpty()) {
 
             lifecycleScope.launch {
-                viewModel.login(usernameData, passwordData).observe(this@LoginActivity) {
+                viewModel.login(check, usernameData, passwordData).observe(this@LoginActivity) {
                     when(it) {
                         is Resource.Success -> {
                             loading.dismiss()

@@ -36,6 +36,7 @@ class DetailStoreActivity : AppCompatActivity() {
 
         val storeId = intent.getIntExtra("store_id", 0)
         storeInfoAdapter = InfoAdapter()
+        setSupportActionBar(binding.dsToolbar)
 
         if(storeId == 0) {
             val intent = Intent(this, MapsActivity::class.java)
@@ -44,8 +45,10 @@ class DetailStoreActivity : AppCompatActivity() {
         } else {
             lifecycleScope.launch(Dispatchers.IO) {
                 store = viewModel.getStoreById(storeId)
-                setUpToolbar()
-                setUpStoreInfo()
+                launch(Dispatchers.Main) {
+                    supportActionBar?.subtitle = store.store_name
+                    setUpStoreInfo()
+                }
             }
         }
 
@@ -57,20 +60,8 @@ class DetailStoreActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.store_menu, menu)
-        return true
-    }
-
-    private fun setUpToolbar() {
-        setSupportActionBar(binding.dsToolbar)
-        supportActionBar?.subtitle = store.store_name
-    }
-
     private fun setUpStoreInfo() {
         binding.apply {
-            dsIvStore.setImageBitmap(store.image)
             dTvId.text = store.store_id.toString()
             dsTvName.text = store.store_name
         }

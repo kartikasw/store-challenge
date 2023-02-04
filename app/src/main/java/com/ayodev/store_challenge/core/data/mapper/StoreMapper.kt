@@ -25,7 +25,8 @@ fun StoreResponse.toEntity(): StoreEntity =
         region_id,
         region_name,
         latitude,
-        longitude
+        longitude,
+        visit_date = null
     )
 
 fun StoreEntity.toModel(): Store =
