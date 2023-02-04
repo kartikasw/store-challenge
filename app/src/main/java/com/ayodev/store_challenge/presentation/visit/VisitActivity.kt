@@ -95,7 +95,7 @@ class VisitActivity : AppCompatActivity() {
 
         binding.vBtnVisit.setOnClickListener {
             val bitmap = viewModel.bitmap.value
-            if(bitmap == null) {
+            if(!viewModel.locationState.value!! || bitmap == null) {
                 toastLong(resources.getString(R.string.rationale_visit))
             } else {
                 val time = getCurrentTime()
