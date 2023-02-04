@@ -112,7 +112,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         storeAdapter.setItems(
             data.map {
-                val distanceToUser =distanceInKm(location!!.latitude, location.longitude, it.latitude, it.longitude) * 1000
+                val distanceToUser =distanceInKm(location!!.latitude, location.longitude, it.latitude, it.longitude)
                 it.distance = distanceToUser
                 it
             }
