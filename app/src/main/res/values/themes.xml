@@ -17,6 +17,12 @@
         <item name="checkboxStyle">@style/Widget.StoreChallenge.CheckBox</item>
     </style>
 
+    <style name="Theme.StoreChallenge.Starting" parent="Theme.SplashScreen">
+<!--        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>-->
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.StoreChallenge</item>
+    </style>
+
     <style name="Widget.StoreChallenge.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
 <!--        <item name="android:button">@drawable/bg_check_box</item>-->
         <item name="android:buttonTint">?colorPrimary</item>
@@ -29,6 +35,13 @@
         <item name="android:drawablePadding">@dimen/component_margin</item>
         <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
         <item name="android:width">100dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.StoreChallenge.StoreMenuButton" parent="Widget.AppCompat.TextView">
+        <item name="android:drawablePadding">@dimen/component_margin</item>
+        <item name="android:textAppearance">@style/TextAppearance.StoreChallenge.Body2</item>
+        <item name="android:width">90dp</item>
         <item name="android:gravity">center</item>
     </style>
 

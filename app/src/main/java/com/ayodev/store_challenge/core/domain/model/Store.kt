@@ -1,8 +1,12 @@
 package com.ayodev.store_challenge.core.domain.model
 
+import android.graphics.Bitmap
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 import java.util.*
 
+@Parcelize
 data class Store(
     val store_id: Int = 0,
     val store_code: String = "",
@@ -25,6 +29,6 @@ data class Store(
     val id: Int = 0,
     var visit: Boolean = false,
     var visit_date: Date = Date(),
-    var distance: Double = 0.0
-//    var image: Bitmap? = null
-): Serializable
+    var distance: Double = 0.0,
+    var image: Bitmap?
+): Parcelable

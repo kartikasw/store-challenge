@@ -12,6 +12,10 @@
 
     <dimen name="check_box_radius">5dp</dimen>
 
+    <dimen name="store_button">48dp</dimen>
+    <dimen name="store_button_icon">35dp</dimen>
+    <dimen name="store_info_size">180dp</dimen>
+    <dimen name="store_info_radius">12dp</dimen>
     <dimen name="menu_icon_size">35dp</dimen>
     <dimen name="menu_size">110dp</dimen>
 

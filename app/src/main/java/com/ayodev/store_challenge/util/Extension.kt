@@ -36,6 +36,9 @@ inline fun <reified T : Serializable> Intent.serializable(key: String): T? = whe
 @SuppressLint("SimpleDateFormat")
 val dateFormat = SimpleDateFormat("dd-MM-yyyy")
 
+@SuppressLint("SimpleDateFormat")
+val monthAndYearFormat = SimpleDateFormat("MMMM yyyy")
+
 val timeStamp: String = dateFormat.format(System.currentTimeMillis())
 
 fun getCurrentTime(): Date = Calendar.getInstance().time

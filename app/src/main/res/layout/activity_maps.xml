@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/MapsBackground"
-    tools:context=".presentation.activity.maps.MapsActivity">
+    tools:context=".presentation.maps.MapsActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/m_toolbar"
@@ -14,13 +14,15 @@
         app:title="@string/menu_store_list"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
     <androidx.appcompat.widget.SearchView
         android:id="@+id/m_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_search"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
         android:layout_margin="@dimen/component_margin_small"
+        android:queryHint="@string/hint_search"
         app:layout_constraintTop_toBottomOf="@id/m_toolbar"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -47,7 +49,6 @@
         android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"
         android:paddingVertical="@dimen/component_margin_medium"
         android:paddingHorizontal="@dimen/layout_padding_horizontal_small"
-        android:text="@string/title_visit_list"
         android:textStyle="bold"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout

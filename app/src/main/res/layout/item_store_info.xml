@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/store_info_size"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/component_margin_medium"
+    android:paddingHorizontal="@dimen/component_margin_medium"
+    android:paddingVertical="@dimen/component_margin_medium">
+    
+    <TextView
+        android:id="@+id/smc_menu_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        app:drawableEndCompat="@drawable/ic_food" />
+
+    <TextView
+        android:id="@+id/smc_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/component_margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/smc_menu_title"/>
+
+    <TextView
+        android:id="@+id/smc_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Headline6"
+        app:layout_constraintTop_toBottomOf="@id/smc_date"
+        android:layout_marginTop="@dimen/component_margin_medium"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/smc_title_target"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+        android:text="@string/store_menu_target"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/cmc_title_achievement"
+        app:layout_constraintEnd_toStartOf="@id/smc_target"
+        app:layout_constraintTop_toBottomOf="@id/smc_percentage"
+        android:layout_marginVertical="@dimen/component_margin"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/smc_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/smc_title_target"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/smc_title_target"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/cmc_title_achievement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/store_menu_achievement"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/smc_achievement"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+        android:layout_marginTop="@dimen/component_margin"/>
+
+    <TextView
+        android:id="@+id/smc_achievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/cmc_title_achievement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cmc_title_achievement"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

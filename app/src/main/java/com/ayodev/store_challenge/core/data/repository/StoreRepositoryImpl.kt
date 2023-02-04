@@ -2,6 +2,7 @@ package com.ayodev.store_challenge.core.data.repository
 
 import android.graphics.Bitmap
 import com.ayodev.store_challenge.core.data.mapper.toListFlowModel
+import com.ayodev.store_challenge.core.data.mapper.toModel
 import com.ayodev.store_challenge.core.data.source.local.LocalDataSource
 import com.ayodev.store_challenge.core.domain.Resource
 import com.ayodev.store_challenge.core.domain.model.Store
@@ -21,7 +22,19 @@ class StoreRepositoryImpl @Inject constructor(
             Resource.Success(it)
         }
 
+    override suspend fun getStoreById(id: Int): Store =
+        local.selectSelectById(id).toModel()
+
     override suspend fun updateStoreWhenVisit(id: Int, visit: Boolean, visit_date: Date, image: Bitmap) {
         local.updateStoreWhenVisit(id, visit, visit_date, image)
     }
+
+    override suspend fun updateStoreVisit(id: Int, visit: Boolean) {
+        local.updateStoreVisit(id, visit)
+    }
+
+    override fun searchStore(search: String):  Flow<Resource<List<Store>>> =
+        local.searchStore(search).toListFlowModel().map {
+            Resource.Success(it)
+        }
 }

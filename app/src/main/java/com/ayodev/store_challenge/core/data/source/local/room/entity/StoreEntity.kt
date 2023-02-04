@@ -1,5 +1,6 @@
 package com.ayodev.store_challenge.core.data.source.local.room.entity
 
+import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -13,6 +14,7 @@ import com.ayodev.store_challenge.core.util.Constants.CHANNEL_NAME_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.DC_ID_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.DC_NAME_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.ID_COLUMN
+import com.ayodev.store_challenge.core.util.Constants.IMAGE_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.LATITUDE_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.LONGITUDE_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.REGION_ID_COLUMN
@@ -26,6 +28,7 @@ import com.ayodev.store_challenge.core.util.Constants.SUBCHANNEL_NAME_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.VISIT_COLUMN
 import com.ayodev.store_challenge.core.util.Constants.VISIT_DATE_COLUMN
 import java.util.*
+import javax.annotation.Nullable
 
 @Entity(tableName = STORE_TABLE)
 data class StoreEntity(
@@ -91,8 +94,9 @@ data class StoreEntity(
     var visit: Boolean = false,
 
     @ColumnInfo(name = VISIT_DATE_COLUMN)
-    var visit_date: Date = Date()
+    var visit_date: Date = Date(),
 
-//    @ColumnInfo(name = IMAGE_COLUMN)
-//    var image: Bitmap? = null
+    @Nullable
+    @ColumnInfo(name = IMAGE_COLUMN)
+    var image: Bitmap? = null
 )

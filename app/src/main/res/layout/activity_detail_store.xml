@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/MapsBackground"
+    tools:context=".presentation.detail_store.DetailStoreActivity">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@android:color/transparent"
+    app:liftOnScroll="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/ds_toolbar"
+        android:layout_width="match_parent"
+        app:title="@string/menu_main_menu"
+        android:layout_height="match_parent"/>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/layout_padding_horizontal_small">
+
+            <TextView
+                android:id="@+id/ds_marquee"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ItemStoreCard"
+                android:layout_marginTop="@dimen/component_margin_medium"
+                android:paddingVertical="@dimen/component_margin"
+                android:paddingHorizontal="@dimen/layout_padding_horizontal_small"
+                android:ellipsize="marquee"
+                android:text="@string/marquee_text"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
+
+            <LinearLayout
+                android:id="@+id/ds_layout_info"
+                app:layout_constraintTop_toBottomOf="@id/ds_marquee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_store_info"
+                android:padding="@dimen/component_margin_medium"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/component_margin_medium"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/layout_padding_horizontal_small">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ds_iv_store"
+                    android:layout_width="@dimen/image_profile"
+                    android:layout_height="@dimen/image_profile"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/component_margin_medium"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/d_tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                        android:textColor="@color/white"
+                        android:paddingBottom="@dimen/component_margin_small" />
+
+                    <TextView
+                        android:id="@+id/ds_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"
+                        android:textColor="@color/white"
+                        android:paddingBottom="@dimen/component_margin_small" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"
+                        android:textColor="@color/white"
+                        android:text="Cluter : Small" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.StoreChallenge.Body1"
+                        android:textColor="@color/white"
+                        android:text="TT - Regular - Pareto"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ds_layout_menu"
+                style="@style/ItemStoreCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/component_margin_medium"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/layout_padding_horizontal_small"
+                android:paddingVertical="@dimen/component_margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/ds_layout_info">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_menu"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/orange" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/component_margin_medium"
+                    app:justifyContent="space_between">
+
+                    <TextView
+                        android:id="@+id/ds_btn_info"
+                        style="@style/Widget.StoreChallenge.StoreMenuButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_information"
+                        app:drawableTopCompat="@drawable/btn_info" />
+
+                    <TextView
+                        android:id="@+id/ds_btn_product_check"
+                        style="@style/Widget.StoreChallenge.StoreMenuButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_product_check"
+                        app:drawableTopCompat="@drawable/btn_product_check" />
+
+                    <TextView
+                        android:id="@+id/ds_btn_promo"
+                        style="@style/Widget.StoreChallenge.StoreMenuButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_promo"
+                        app:drawableTopCompat="@drawable/btn_promo" />
+
+                    <TextView
+                        android:id="@+id/ds_btn_product_oos"
+                        style="@style/Widget.StoreChallenge.StoreMenuButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_ringkasan_oos"
+                        app:drawableTopCompat="@drawable/btn_product_oos" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <TextView
+                    android:id="@+id/ds_btn_investment"
+                    style="@style/Widget.StoreChallenge.StoreMenuButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/component_margin"
+                    android:text="@string/menu_investment"
+                    app:drawableTopCompat="@drawable/btn_investment" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ds_info_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/component_margin_medium"
+                android:orientation="vertical"
+                style="@style/ItemStoreCard"
+                android:paddingVertical="@dimen/component_margin_medium"
+                android:paddingStart="@dimen/layout_padding_horizontal_small"
+                app:layout_constraintTop_toBottomOf="@id/ds_layout_menu"
+                android:layout_marginBottom="@dimen/component_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_store_dashboard"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Subtitle2"
+                    android:textColor="@color/orange"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ds_rv_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_store_info"
+                    android:layout_marginTop="@dimen/component_margin_medium"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ds_btn_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.StoreChallenge.Button"
+                android:text="@string/btn_end"
+                app:layout_constraintTop_toBottomOf="@id/ds_info_list"
+                android:layout_marginTop="@dimen/layout_padding_horizontal_small"
+                android:layout_marginHorizontal="@dimen/layout_padding_horizontal_small"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

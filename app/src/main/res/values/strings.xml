@@ -10,15 +10,28 @@
     <string name="menu_target">Target Install CDFDPC</string>
     <string name="menu_transmission_history">Transmission History</string>
     <string name="menu_visit">Kunjungan</string>
+    <string name="menu_information">Information</string>
+    <string name="menu_product_check">Product Check</string>
+    <string name="menu_promo">SKU Promo</string>
+    <string name="menu_ringkasan_oos">Ringkasan OOS</string>
+    <string name="menu_investment">Store Investment</string>
+    <string name="menu_store_dashboard">Dashboard Store</string>
+
+    <string name="marquee_text">Untuk support yang luar biasa di masa-masa covid-19 seperti ini.</string>
+    
+    <string name="store_menu_target">Target</string>
+    <string name="store_menu_achievement">Pencapaian</string>
 
     <string name="btn_cancel">Batal</string>
     <string name="btn_login">Login</string>
     <string name="btn_reset">Reset</string>
     <string name="btn_not_visit">Not Visit</string>
     <string name="btn_visit">Visit</string>
+    <string name="btn_end">Selesai</string>
 
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+    <string name="hint_search">Cari toko</string>
 
     <string name="confirm_logout">Apakah Anda yakin ingin keluar dari aplikasi?</string>
 

@@ -17,11 +17,21 @@ class LocalDataSource @Inject constructor(
     fun selectAllStore(): Flow<List<StoreEntity>> =
         store.selectAllStore()
 
+    suspend fun selectSelectById(id: Int): StoreEntity =
+        store.selectStoreById(id)
+
+    fun searchStore(search: String): Flow<List<StoreEntity>> =
+        store.searchStore(search)
+
     suspend fun insertAllStore(stores: List<StoreEntity>): Unit =
         store.insertAllStore(stores)
 
     suspend fun updateStoreWhenVisit(id: Int, visit: Boolean, visit_date: Date, image: Bitmap) {
-        store.updateStoreWhenVisit(id, visit, visit_date)
+        store.updateStoreWhenVisit(id, visit, visit_date, image)
+    }
+
+    suspend fun updateStoreVisit(id: Int, visit: Boolean) {
+        store.updateStoreVisit(id, visit)
     }
 
     fun setLoginStatus(status: Boolean) =

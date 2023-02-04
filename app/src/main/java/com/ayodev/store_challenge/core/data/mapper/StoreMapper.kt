@@ -50,7 +50,8 @@ fun StoreEntity.toModel(): Store =
         longitude,
         id,
         visit,
-        visit_date
+        visit_date,
+        image = image
     )
 
 fun List<StoreEntity>.toListModel(): List<Store> =

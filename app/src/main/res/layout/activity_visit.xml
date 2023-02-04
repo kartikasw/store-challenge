@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/MapsBackground"
-    tools:context=".presentation.activity.visit.VisitActivity">
+    tools:context=".presentation.visit.VisitActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/v_toolbar"
