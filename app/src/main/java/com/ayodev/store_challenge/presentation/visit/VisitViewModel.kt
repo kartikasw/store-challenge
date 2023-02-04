@@ -47,6 +47,7 @@ class VisitViewModel @Inject constructor(
     fun updateStoreWhenVisit(id: Int, visit: Boolean, visit_date: Date, image: Bitmap) =
         viewModelScope.launch {
             storeUseCase.updateStoreWhenVisit(id, visit, visit_date, image)
+            _store.value?.visit = true
         }
 
     fun updateStoreVisit(id: Int, visit: Boolean) =

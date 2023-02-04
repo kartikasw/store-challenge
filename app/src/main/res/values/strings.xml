@@ -42,13 +42,13 @@
     <string name="state_location_empty">Belum ada data lokasi</string>
     <string name="state_location_ok">Lokasi sesuai</string>
     <string name="state_location_problem">Lokasi belum sesuai</string>
-    <string name="state_not_visit_yet">Last Visit\n&lt;b>Belum mengunjungi toko&lt;b></string>
+    <string name="state_not_visit_yet">&lt;b>Belum mengunjungi toko&lt;b></string>
     <string name="state_visited">Visited</string>
 
     <string name="title_visit">Kunjungan pada bulan &lt;b>%1$s&lt;/b>></string>
     <string name="title_visit_list">List kunjungan %1$s</string>
 
-    <string name="last_visit">Last Visit \n &lt;b>%1$s&lt;/b></string>
+    <string name="last_visit">Last Visit &lt;b>%1$s&lt;/b></string>
 
     <string name="rationale_location">Fitur ini memerlukan akses lokasi</string>
     <string name="rationale_visit">Harus foto dan tagging lokasi</string>

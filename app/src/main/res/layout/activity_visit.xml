@@ -7,13 +7,6 @@
     style="@style/MapsBackground"
     tools:context=".presentation.visit.VisitActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/v_toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"/>
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v_guideline_1"
         android:layout_width="match_parent"
@@ -36,6 +29,13 @@
         app:layout_constraintBottom_toTopOf="@id/v_guideline_2"
         android:src="@drawable/placeholder_image"
         android:scaleType="centerCrop"/>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/v_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/v_card"
@@ -139,6 +139,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
             android:text="@string/last_visit"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/v_table"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/component_margin_medium"

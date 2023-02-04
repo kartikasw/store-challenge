@@ -1,10 +1,12 @@
 package com.ayodev.store_challenge.presentation.maps
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,10 +17,8 @@ import com.ayodev.store_challenge.core.domain.model.Store
 import com.ayodev.store_challenge.databinding.ActivityMapsBinding
 import com.ayodev.store_challenge.presentation.visit.VisitActivity
 import com.ayodev.store_challenge.util.*
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,9 +29,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMapsBinding
 
     private val viewModel: MapsViewModel by viewModels()
-
-    private lateinit var mMap: GoogleMap
-    private lateinit var mapView: MapView
 
     private lateinit var storeAdapter: StoreAdapter
     private lateinit var rvStore: RecyclerView
@@ -51,6 +48,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         locationPermission.requestPermissions()
 
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.m_maps) as SupportMapFragment
+
         setUpToolbar()
         setUpTitle()
         setUpSearch()
@@ -65,6 +64,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 showLoading(false)
             }
         }
+
+        mapFragment.getMapAsync(this)
 
     }
 
@@ -87,8 +88,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             when(it) {
                 is Resource.Success -> {
                     if(it.data != null) {
+                        viewModel.updateStores(it.data)
                         setUpStoreList(it.data)
-                        Log.d(TAG, it.data.toString())
                     }
                 }
                 is Resource.Error -> {
@@ -102,18 +103,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun setUpStoreList(data: List<Store>) {
         val location = viewModel.location.value
-        Log.d(TAG, location.toString())
 
         storeAdapter.onItemClick = {
             val intent = Intent(this, VisitActivity::class.java)
-            intent.putExtra("store_id", it.store_id)
+            intent.putExtra("store_id", it.id)
             startActivity(intent)
         }
 
         storeAdapter.setItems(
             data.map {
                 val distanceToUser =distanceInKm(location!!.latitude, location.longitude, it.latitude, it.longitude) * 1000
-                Log.d(TAG, distanceToUser.toString())
                 it.distance = distanceToUser
                 it
             }
@@ -131,14 +130,44 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.mLoading.root.isVisible = state
     }
 
+    @SuppressLint("MissingPermission")
     override fun onMapReady(gMap: GoogleMap) {
-        mMap = gMap
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(
-            MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        gMap.uiSettings.isZoomControlsEnabled = true
+        gMap.uiSettings.isIndoorLevelPickerEnabled = true
+        gMap.uiSettings.isCompassEnabled = true
+        gMap.uiSettings.isMapToolbarEnabled = true
+
+        viewModel.stores.observe(this) {
+            if(it != null) {
+                Log.d(TAG, "Stores in map: $it")
+                for(i in it) {
+                    Log.d(TAG, i.toString())
+                    val location = LatLng(i.latitude, i.longitude)
+                    gMap.addMarker(
+                        MarkerOptions()
+                            .position(location)
+                            .title(i.store_name)
+                    )
+
+                }
+            }
+            gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                LatLng(it[0].latitude, it[0].longitude), 10f
+            ))
+
+            gMap.isMyLocationEnabled = true
+
+            gMap.uiSettings.isMyLocationButtonEnabled = true
+
+            val useLocation = viewModel.location.value!!
+            gMap.addCircle(
+                CircleOptions()
+                    .center(LatLng(useLocation.latitude, useLocation.longitude))
+                    .radius(100.0)
+                    .fillColor(0x22FF0000)
+                    .strokeColor(Color.TRANSPARENT)
+            )
+        }
     }
 
     private fun setUpSearch() {

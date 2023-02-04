@@ -102,8 +102,9 @@ class VisitActivity : AppCompatActivity() {
                     showLoading(true)
                     viewModel.updateStoreWhenVisit(store.id, true, time, bitmap)
                     showLoading(false)
+                    setVisitText(true)
                     val intent = Intent(this, DetailStoreActivity::class.java)
-                    intent.putExtra("store_id", store.store_id)
+                    intent.putExtra("store_id", store.id)
                     startActivity(intent)
                 } catch (e: Exception) {
                     showLoading(false)
@@ -175,16 +176,22 @@ class VisitActivity : AppCompatActivity() {
             vTvErtm.text = ""
             vTvPareto.text = ""
             vTvEMerchandising.text = ""
-            vIvImage.setImageBitmap(store.image)
-
-            val text = if (store.visit) {
-                resources.getString(R.string.last_visit, dateFormat.format(store.visit_date))
-            } else {
-                resources.getString(R.string.state_not_visit_yet)
+            if(store.image != null) {
+                vIvImage.setImageBitmap(store.image)
             }
-            val styledText = text.styledText()
-            vTvVisit.text = styledText
+
+            setVisitText(store.visit)
         }
+    }
+
+    private fun setVisitText(status: Boolean) {
+        val text = if (status) {
+            resources.getString(R.string.last_visit, dateFormat.format(store.visit_date))
+        } else {
+            resources.getString(R.string.state_not_visit_yet)
+        }
+        val styledText = text.styledText()
+        binding.vTvVisit.text = styledText
     }
 
     private fun setUpLoading() {

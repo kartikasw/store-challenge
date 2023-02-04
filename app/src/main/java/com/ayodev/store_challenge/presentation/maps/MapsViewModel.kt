@@ -3,6 +3,7 @@ package com.ayodev.store_challenge.presentation.maps
 import android.location.Location
 import android.util.Log
 import androidx.lifecycle.*
+import com.ayodev.store_challenge.core.domain.model.Store
 import com.ayodev.store_challenge.core.domain.use_case.StoreUseCase
 import com.ayodev.store_challenge.core.domain.use_case.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +20,9 @@ class MapsViewModel @Inject constructor(
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 
+    private val _stores = MutableLiveData<List<Store>>()
+    val stores: LiveData<List<Store>> = _stores
+
     init {
         _loading.value = true
     }
@@ -26,6 +30,9 @@ class MapsViewModel @Inject constructor(
     private val _location = MutableLiveData<Location>()
     val location: LiveData<Location> = _location
 
+    fun updateStores(stories: List<Store>) {
+        _stores.postValue(stories)
+    }
     fun getAllStore() =
         storeUseCase.getAllStore().asLiveData()
 
