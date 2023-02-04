@@ -171,12 +171,12 @@ class VisitActivity : AppCompatActivity() {
     private fun setUpStoreInfo() {
         binding.apply {
             vTvName.text = store.store_name
-            vTvType.text = ""
-            vTvDisplay.text = ""
-            vTvSubDisplay.text = ""
-            vTvErtm.text = ""
-            vTvPareto.text = ""
-            vTvEMerchandising.text = ""
+            vTvType.text = store.channel_name
+            vTvDisplay.text = store.subchannel_name
+            vTvSubDisplay.text = store.dc_name
+            vTvErtm.text = "Ya"
+            vTvPareto.text = "Ya"
+            vTvEMerchandising.text = "Ya"
             if(store.image != null) {
                 vIvImage.setImageBitmap(store.image)
             }

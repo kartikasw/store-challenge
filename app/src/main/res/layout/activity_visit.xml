@@ -96,39 +96,75 @@
             android:layout_marginStart="47dp">
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="Tipe Outlet"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_type"/>
+                <TextView
+                    android:text="Tipe Outlet"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
+                <TextView
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
+                <TextView
+                    android:id="@+id/v_tv_type"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
             </TableRow>
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="Tipe Display"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_display"/>
+                <TextView
+                    android:text="Tipe Display"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
+                <TextView
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:id="@+id/v_tv_display"/>
             </TableRow>
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="Sub Tipe Display"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_sub_display"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text="Sub Tipe Display"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:id="@+id/v_tv_sub_display"/>
             </TableRow>
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="ERTM"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_ertm"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text="ERTM"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:id="@+id/v_tv_ertm"/>
             </TableRow>
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="Pareto"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_pareto"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text="Pareto"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:id="@+id/v_tv_pareto"/>
             </TableRow>
 
             <TableRow android:paddingBottom="@dimen/component_margin_small">
-                <TextView android:text="E-merchandising"/>
-                <TextView android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
-                <TextView android:id="@+id/v_tv_e_merchandising"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text="E-merchandising"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:text=":" android:paddingHorizontal="@dimen/component_margin"/>
+                <TextView
+                    android:textAppearance="@style/TextAppearance.StoreChallenge.Body2"
+                    android:id="@+id/v_tv_e_merchandising"/>
             </TableRow>
 
         </TableLayout>
